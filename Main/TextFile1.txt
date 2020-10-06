@@ -1,0 +1,82 @@
+﻿				
+				-----------------------------------------------------------------
+				if(x.Month == 12 && x.Day == 25)
+				{
+					suffix = "_Holiday_Christmas";
+				}
+				else if(x.Month == 7 && x.Day == 2 && x.Year >= 1922 && x.Year < 1997)
+				{
+					suffix = "_Birthday_David Henry Hildebran";
+				}
+
+				else if(x.Month == 11 && x.Day == 21 && x.Year >= 1944 && x.Year < 2008)
+				{
+					suffix = "_Birthday_Jack Rucker";
+				}
+
+				else if(x.Month == 3 && x.Day == 31 && x.Year >= 1945 && x.Year < 2015)
+				{
+					suffix = "_Birthday_Kathy Rucker";
+				}
+
+				else if(x.Month == 1 && x.Day == 1)
+				{
+					suffix = "_Holiday_New Years Day";
+				}
+				else if(x.Month == 10 && x.Day == 31)
+				{
+					suffix = "_Holiday_Halloween";
+				}
+				else if(x.Month == 7 && x.Day == 4)
+				{
+					suffix = "_Holiday_Independence Day";
+				}
+				else if(x.Month == 10 && x.Day == 4 && x.Year >= 1972)
+				{
+					suffix = "_Birthday_Christi Hildebran";
+				}
+				else if(x.Month == 9 && x.Day == 6 && x.Year >= 1967)
+				{
+					suffix = "_Birthday_Chris Hildebran";
+				}
+
+				else if(x.Month == 6 && x.Day == 25 && x.Year >= 1993)
+				{
+					suffix = "_AABD_Chris Hildebran";
+				}
+
+				else
+				{
+					suffix = "_TBD";
+				}
+				-----------------------------------------------------------------
+
+
+				// Logic To Determine Interval Type
+			Func<DateTime, int, DateTime> addX = null;
+
+			switch(this.cmbIntervalUnit.SelectedItem.ToString())
+			{
+				case "Day(s)" :
+					addX = (x, i) => x.AddDays(i);
+
+					break;
+				case "Week(s)" :
+					addX = (x, i) => x.AddDays(i);
+
+					break;
+				case "Month(s)" :
+					addX = (x, i) => x.AddMonths(i);
+
+					break;
+
+				case "Year(s)" :
+					addX = (x, i) => x.AddYears(i);
+
+					break;
+			}
+
+			// Logic To Determine Interval Type
+
+
+
